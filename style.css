@@ -1,0 +1,111 @@
+:root {
+    --main-bg-color : #ffd8ae;
+    --main-color : #080808;
+    --main-hover-color : #ffe4c7;
+}
+
+body {
+    margin: 0;
+}
+
+.toolbar{
+    display: flex;
+    background-color: var(--main-bg-color);
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 24px;
+    font-family: 'Jua', sans-serif;
+    font-size: 18px;
+}
+
+.toolbar_logo{
+    font-size: 24px;
+    color: var(--main-color);
+}
+
+.toolbar_logo > i {
+    padding: 2px;
+    border: 3px solid var(--main-color);
+    margin-right: 5px;
+}
+
+.toolbar_menu {
+    display: flex;
+    list-style: none;
+    padding-left: 0;
+}
+
+.toolbar_menu > li {
+    padding: 8px 18px;
+}
+
+.toolbar_menu > li:hover {
+    background-color: var(--main-hover-color);
+    border-radius: 5px;
+}
+
+li > a {
+    text-decoration: none;
+    color: var(--main-color);
+}
+
+.toolbar_link{
+    display : flex;
+    list-style: none;
+    padding-left: 0;
+}
+
+.toolbar_link > li {
+    padding: 8px 18px;
+}
+
+.toolbar_link > li:hover {
+    background-color: var(--main-hover-color);
+    border-radius: 5px;
+}
+
+.toggleButton {
+    position: absolute;
+    right : 32px;
+    color : var(--main-color);
+    display: none;
+    padding: 8px;
+}
+
+.toggleButton:hover {
+    color: var(--main-hover-color);
+}
+
+@media screen and (max-width : 740px) {
+    .toolbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .toolbar_menu {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    .toolbar_menu > li {
+        width: 100%;
+        text-align: center;
+    }
+
+    .toolbar_link {
+        display: none;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .toggleButton {
+        display:block;
+    }
+
+    .toolbar_menu.active , .toolbar_link.active{
+        display:flex;
+    }
+}
